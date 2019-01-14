@@ -22,14 +22,16 @@ public class ChangeApplication {
 	private static final String ADD_EXPENSE = "addExpense";
 	private static final String ADD_INTERCHANGE = "addInterchange";
 
-
-
-
+	
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = SpringApplication.run(ChangeApplication.class, args);
 
 		ApiController controller = applicationContext.getBean(ApiController.class);
 
+		startCommandLineClient(controller);
+	}
+
+	private static void startCommandLineClient(ApiController controller){
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Commands: " + ADD_USER + ", " + GET_USER + ", " + GET_ALL_USERS + ", " + SHOW_BALANCE +
