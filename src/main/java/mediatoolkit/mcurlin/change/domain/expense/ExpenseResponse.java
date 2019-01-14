@@ -12,9 +12,9 @@ public class ExpenseResponse {
 
     private String description;
 
-    private User userReceivedExpense;
-
-    private List<User> usersParticipatedInExpense;
+//    private User userReceivedExpense;
+//
+//    private List<User> usersParticipatedInExpense;
 
     public ExpenseResponse(){
 
@@ -24,8 +24,8 @@ public class ExpenseResponse {
         this.id = expense.getId();
         this.amount = expense.getAmount();
         this.description = expense.getDescription();
-        this.userReceivedExpense = expense.getUserReceivedExpense();
-        this.usersParticipatedInExpense = expense.getUsersParticipatedInExpense();
+//        this.userReceivedExpense = expense.getUserReceivedExpense();
+//        this.usersParticipatedInExpense = expense.getUsersParticipatedInExpense();
 //                .stream().map(i -> i.getId()).collect(Collectors.toList());
     }
 
@@ -53,19 +53,19 @@ public class ExpenseResponse {
         this.description = description;
     }
 
-    public User getUserReceivedExpense() {
-        return userReceivedExpense;
-    }
-
-    public void setUserReceivedExpense(User userReceivedExpense) {
-        this.userReceivedExpense = userReceivedExpense;
-    }
-
-    public List<User> getUsersParticipatedInExpense() {
-        return usersParticipatedInExpense;
-    }
-
-    public void setUsersParticipatedInExpense(List<User> usersParticipatedInExpense) {
-        this.usersParticipatedInExpense = usersParticipatedInExpense;
-    }
+//    public User getUserReceivedExpense() {
+//        return userReceivedExpense;
+//    }
+//
+//    public void setUserReceivedExpense(User userReceivedExpense) {
+//        this.userReceivedExpense = userReceivedExpense;
+//    }
+//
+//    public List<User> getUsersParticipatedInExpense() {
+//        return usersParticipatedInExpense;
+//    }
+//
+//    public void setUsersParticipatedInExpense(List<User> usersParticipatedInExpense) {
+//        this.usersParticipatedInExpense = usersParticipatedInExpense;
+//    }
 }

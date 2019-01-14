@@ -13,9 +13,9 @@ public class IncomeResponse {
 
     private String description;
 
-    private User userReceivedIncome;
-
-    private List<User> usersParticipatedInIncome;
+//    private User userReceivedIncome;
+//
+//    private List<User> usersParticipatedInIncome;
 
     public IncomeResponse(){
 
@@ -25,8 +25,8 @@ public class IncomeResponse {
         this.id = income.getId();
         this.amount = income.getAmount();
         this.description = income.getDescription();
-        this.userReceivedIncome = income.getUserReceivedIncome();
-        this.usersParticipatedInIncome = income.getUsersParticipatedInIncome();
+//        this.userReceivedIncome = income.getUserReceivedIncome();
+//        this.usersParticipatedInIncome = income.getUsersParticipatedInIncome();
 //                .stream().map(i -> i.getId()).collect(Collectors.toList());
     }
 
@@ -54,19 +54,19 @@ public class IncomeResponse {
         this.description = description;
     }
 
-    public User getUserReceivedIncome() {
-        return userReceivedIncome;
-    }
-
-    public void setUserReceivedIncome(User userReceivedIncome) {
-        this.userReceivedIncome = userReceivedIncome;
-    }
-
-    public List<User> getUsersParticipatedInIncome() {
-        return usersParticipatedInIncome;
-    }
-
-    public void setUsersParticipatedInIncome(List<User> usersParticipatedInIncome) {
-        this.usersParticipatedInIncome = usersParticipatedInIncome;
-    }
+//    public User getUserReceivedIncome() {
+//        return userReceivedIncome;
+//    }
+//
+//    public void setUserReceivedIncome(User userReceivedIncome) {
+//        this.userReceivedIncome = userReceivedIncome;
+//    }
+//
+//    public List<User> getUsersParticipatedInIncome() {
+//        return usersParticipatedInIncome;
+//    }
+//
+//    public void setUsersParticipatedInIncome(List<User> usersParticipatedInIncome) {
+//        this.usersParticipatedInIncome = usersParticipatedInIncome;
+//    }
 }

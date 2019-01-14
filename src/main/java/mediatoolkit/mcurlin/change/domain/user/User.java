@@ -42,6 +42,10 @@ public class User {
 
     private Double balance;
 
+    public User(){
+
+    }
+
     public User(String name, String surname, List<Income> participatedIncome, List<Expense> participatedExpense,
                 List<Interchange> receivedInterchange, Double balance) {
         this.name = name;
@@ -58,6 +62,7 @@ public class User {
         this.participatedIncome = new ArrayList<>();
         this.participatedExpense = new ArrayList<>();
         this.receivedInterchange = new ArrayList<>();
+        this.balance = new Double(0);
     }
 
     public Long getId() {
@@ -88,7 +93,7 @@ public class User {
         return participatedIncome;
     }
 
-    public void addIncome(Income income) {
+    public void addParticipatedIncome(Income income) {
         this.participatedIncome.add(income);
     }
 
@@ -96,7 +101,7 @@ public class User {
         return participatedExpense;
     }
 
-    public void addExpense(Expense expense) {
+    public void addParticipatedExpense(Expense expense) {
         this.participatedExpense.add(expense);
     }
 
@@ -112,7 +117,39 @@ public class User {
         return receivedInterchange;
     }
 
-    public void addInterchange(Interchange interchange) {
+    public void addReceivedInterchange(Interchange interchange) {
         this.receivedInterchange.add(interchange);
+    }
+
+    public void setReceivedIncome(List<Income> receivedIncome) {
+        this.receivedIncome = receivedIncome;
+    }
+
+    public void setParticipatedIncome(List<Income> participatedIncome) {
+        this.participatedIncome = participatedIncome;
+    }
+
+    public List<Expense> getReceivedExpense() {
+        return receivedExpense;
+    }
+
+    public void setReceivedExpense(List<Expense> receivedExpense) {
+        this.receivedExpense = receivedExpense;
+    }
+
+    public void setParticipatedExpense(List<Expense> participatedExpense) {
+        this.participatedExpense = participatedExpense;
+    }
+
+    public List<Interchange> getGivenInterchange() {
+        return givenInterchange;
+    }
+
+    public void setGivenInterchange(List<Interchange> givenInterchange) {
+        this.givenInterchange = givenInterchange;
+    }
+
+    public void setReceivedInterchange(List<Interchange> receivedInterchange) {
+        this.receivedInterchange = receivedInterchange;
     }
 }

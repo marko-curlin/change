@@ -28,14 +28,14 @@ public class UserServiceImpl implements UserService {
     public void addIncome(Income income) {
         User userReceivedIncome = income.getUserReceivedIncome();
 
-        userReceivedIncome.addIncome(income);
+        userReceivedIncome.addParticipatedIncome(income);
         userReceivedIncome.setBalance(userReceivedIncome.getBalance() - income.getAmount());
         userRepository.save(userReceivedIncome);
 
         List<User> usersParticipatedInIncome = income.getUsersParticipatedInIncome();
         int numberOfParticipants = usersParticipatedInIncome.size();
         for(User user : usersParticipatedInIncome){
-            user.addIncome(income);
+            user.addParticipatedIncome(income);
             user.setBalance(user.getBalance() + income.getAmount()/numberOfParticipants);
             userRepository.save(user);
         }
@@ -55,14 +55,14 @@ public class UserServiceImpl implements UserService {
     public void addExpense(Expense expense) {
         User userReceivedExpense = expense.getUserReceivedExpense();
 
-        userReceivedExpense.addExpense(expense);
+        userReceivedExpense.addParticipatedExpense(expense);
         userReceivedExpense.setBalance(userReceivedExpense.getBalance() + expense.getAmount());
         userRepository.save(userReceivedExpense);
 
         List<User> usersParticipatedInExpense = expense.getUsersParticipatedInExpense();
         int numberOfParticipants = usersParticipatedInExpense.size();
         for(User user : usersParticipatedInExpense){
-            user.addExpense(expense);
+            user.addParticipatedExpense(expense);
             user.setBalance(user.getBalance() - expense.getAmount()/numberOfParticipants);
             userRepository.save(user);
         }
@@ -73,8 +73,8 @@ public class UserServiceImpl implements UserService {
         User userGiver = interchange.getUserGiver();
         User userReceiver = interchange.getUserReceiver();
 
-        userGiver.addInterchange(interchange);
-        userReceiver.addInterchange(interchange);
+        userGiver.addReceivedInterchange(interchange);
+        userReceiver.addReceivedInterchange(interchange);
 
         userGiver.setBalance(userGiver.getBalance() + interchange.getAmount());
         userReceiver.setBalance(userReceiver.getBalance() - interchange.getAmount());
