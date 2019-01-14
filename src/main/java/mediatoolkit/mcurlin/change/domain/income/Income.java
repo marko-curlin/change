@@ -32,8 +32,6 @@ public class Income {
     public Income(IncomeRequest incomeRequest){
         this.amount = incomeRequest.getAmount();
         this.description = incomeRequest.getDescription();
-//        this.userReceivedIncome = incomeRequest.getUserReceivedIncome();
-//        this.usersParticipatedInIncome = incomeRequest.getUsersParticipatedInIncome();
     }
 
     public Income(Double amount, String description, User userReceivedIncome, List<User> usersParticipatedInIncome) {

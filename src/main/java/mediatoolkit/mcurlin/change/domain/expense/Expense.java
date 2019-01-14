@@ -32,8 +32,6 @@ public class Expense {
     public Expense(ExpenseRequest expenseRequest){
         this.amount = expenseRequest.getAmount();
         this.description = expenseRequest.getDescription();
-//        this.userReceivedExpense = expenseRequest.getUserReceivedExpense();
-//        this.usersParticipatedInExpense = expenseRequest.getUsersParticipatedInExpense();
     }
 
     public Expense(Double amount, String description, User userReceivedExpense, List<User> usersParticipatedInExpense) {

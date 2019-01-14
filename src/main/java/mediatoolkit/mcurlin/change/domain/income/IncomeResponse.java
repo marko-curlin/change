@@ -1,10 +1,5 @@
 package mediatoolkit.mcurlin.change.domain.income;
 
-import mediatoolkit.mcurlin.change.domain.user.User;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class IncomeResponse {
 
     private Long id;
@@ -12,10 +7,6 @@ public class IncomeResponse {
     private Double amount;
 
     private String description;
-
-//    private User userReceivedIncome;
-//
-//    private List<User> usersParticipatedInIncome;
 
     public IncomeResponse(){
 
@@ -25,9 +16,6 @@ public class IncomeResponse {
         this.id = income.getId();
         this.amount = income.getAmount();
         this.description = income.getDescription();
-//        this.userReceivedIncome = income.getUserReceivedIncome();
-//        this.usersParticipatedInIncome = income.getUsersParticipatedInIncome();
-//                .stream().map(i -> i.getId()).collect(Collectors.toList());
     }
 
     public Long getId() {
@@ -53,22 +41,6 @@ public class IncomeResponse {
     public void setDescription(String description) {
         this.description = description;
     }
-
-//    public User getUserReceivedIncome() {
-//        return userReceivedIncome;
-//    }
-//
-//    public void setUserReceivedIncome(User userReceivedIncome) {
-//        this.userReceivedIncome = userReceivedIncome;
-//    }
-//
-//    public List<User> getUsersParticipatedInIncome() {
-//        return usersParticipatedInIncome;
-//    }
-//
-//    public void setUsersParticipatedInIncome(List<User> usersParticipatedInIncome) {
-//        this.usersParticipatedInIncome = usersParticipatedInIncome;
-//    }
 
 
     @Override

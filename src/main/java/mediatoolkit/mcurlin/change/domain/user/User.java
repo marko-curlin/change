@@ -4,7 +4,6 @@ package mediatoolkit.mcurlin.change.domain.user;
 import mediatoolkit.mcurlin.change.domain.expense.Expense;
 import mediatoolkit.mcurlin.change.domain.income.Income;
 import mediatoolkit.mcurlin.change.domain.interchange.Interchange;
-import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
