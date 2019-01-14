@@ -2,6 +2,7 @@ package mediatoolkit.mcurlin.change.domain.expense;
 
 import mediatoolkit.mcurlin.change.domain.user.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExpenseRequest {
@@ -15,7 +16,7 @@ public class ExpenseRequest {
     private List<Long> usersParticipatedInExpenseId;
 
     public ExpenseRequest(){
-
+        usersParticipatedInExpenseId = new ArrayList<>();
     }
 
 //    public ExpenseRequest(Long id, Double amount, String description, Long userReceivedExpenseId, List<Long> usersParticipatedInExpenseId) {
@@ -54,7 +55,7 @@ public class ExpenseRequest {
         return usersParticipatedInExpenseId;
     }
 
-    public void setUsersParticipatedInExpenseId(List<Long> usersParticipatedInExpenseId) {
-        this.usersParticipatedInExpenseId = usersParticipatedInExpenseId;
+    public void addUsersParticipatedInExpenseId(Long usersParticipatedInExpenseId) {
+        this.usersParticipatedInExpenseId.add(usersParticipatedInExpenseId);
     }
 }

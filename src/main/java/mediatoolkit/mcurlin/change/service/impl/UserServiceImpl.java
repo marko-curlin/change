@@ -27,13 +27,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addIncome(Income income) {
         User userReceivedIncome = income.getUserReceivedIncome();
+        List<User> usersParticipatedInIncome = income.getUsersParticipatedInIncome();
+        int numberOfParticipants = usersParticipatedInIncome.size()+1;
 
         userReceivedIncome.addParticipatedIncome(income);
-        userReceivedIncome.setBalance(userReceivedIncome.getBalance() - income.getAmount());
+        userReceivedIncome.setBalance(userReceivedIncome.getBalance() - income.getAmount() * (double)(numberOfParticipants-1)/numberOfParticipants);
         userRepository.save(userReceivedIncome);
 
-        List<User> usersParticipatedInIncome = income.getUsersParticipatedInIncome();
-        int numberOfParticipants = usersParticipatedInIncome.size();
+
         for(User user : usersParticipatedInIncome){
             user.addParticipatedIncome(income);
             user.setBalance(user.getBalance() + income.getAmount()/numberOfParticipants);
@@ -54,13 +55,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addExpense(Expense expense) {
         User userReceivedExpense = expense.getUserReceivedExpense();
+        List<User> usersParticipatedInExpense = expense.getUsersParticipatedInExpense();
+        int numberOfParticipants = usersParticipatedInExpense.size()+1;
 
         userReceivedExpense.addParticipatedExpense(expense);
-        userReceivedExpense.setBalance(userReceivedExpense.getBalance() + expense.getAmount());
+        userReceivedExpense.setBalance(userReceivedExpense.getBalance() + expense.getAmount() * (double)(numberOfParticipants-1)/numberOfParticipants);
         userRepository.save(userReceivedExpense);
 
-        List<User> usersParticipatedInExpense = expense.getUsersParticipatedInExpense();
-        int numberOfParticipants = usersParticipatedInExpense.size();
         for(User user : usersParticipatedInExpense){
             user.addParticipatedExpense(expense);
             user.setBalance(user.getBalance() - expense.getAmount()/numberOfParticipants);

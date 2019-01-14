@@ -4,6 +4,9 @@ package mediatoolkit.mcurlin.change.domain.user;
 import mediatoolkit.mcurlin.change.domain.expense.Expense;
 import mediatoolkit.mcurlin.change.domain.income.Income;
 import mediatoolkit.mcurlin.change.domain.interchange.Interchange;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,6 +27,7 @@ public class User {
     @OneToMany(mappedBy = "userReceivedIncome")
     private List<Income> receivedIncome;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany(mappedBy = "usersParticipatedInIncome")
     private List<Income> participatedIncome;
 
@@ -31,12 +35,15 @@ public class User {
     @OneToMany(mappedBy = "userReceivedExpense")
     private List<Expense> receivedExpense;
 
-    @ManyToMany(mappedBy = "usersParticipatedInExpense")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @ManyToMany( mappedBy = "usersParticipatedInExpense")
     private List<Expense> participatedExpense;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "userGiver")
     private List<Interchange> givenInterchange;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "userReceiver")
     private List<Interchange> receivedInterchange;
 
@@ -62,6 +69,9 @@ public class User {
         this.participatedIncome = new ArrayList<>();
         this.participatedExpense = new ArrayList<>();
         this.receivedInterchange = new ArrayList<>();
+        this.givenInterchange = new ArrayList<>();
+        this.receivedExpense = new ArrayList<>();
+        this.receivedIncome = new ArrayList<>();
         this.balance = new Double(0);
     }
 
@@ -151,5 +161,19 @@ public class User {
 
     public void setReceivedInterchange(List<Interchange> receivedInterchange) {
         this.receivedInterchange = receivedInterchange;
+    }
+
+    public List<Income> getReceivedIncome() {
+        return receivedIncome;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 }

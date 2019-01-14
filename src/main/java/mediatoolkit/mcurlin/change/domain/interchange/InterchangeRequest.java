@@ -18,6 +18,10 @@ public class InterchangeRequest {
         this.userReceiverId = userReceiverId;
     }
 
+    public InterchangeRequest() {
+
+    }
+
     public Double getAmount() {
         return amount;
     }

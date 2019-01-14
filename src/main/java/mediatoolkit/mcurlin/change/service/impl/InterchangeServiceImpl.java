@@ -18,9 +18,10 @@ public class InterchangeServiceImpl implements InterchangeService {
     private UserRepository userRepository;
     private UserService userService;
 
-    @Autowired
-    public InterchangeServiceImpl(InterchangeRepository interchangeRepository) {
+    public InterchangeServiceImpl(InterchangeRepository interchangeRepository, UserRepository userRepository, UserService userService) {
         this.interchangeRepository = interchangeRepository;
+        this.userRepository = userRepository;
+        this.userService = userService;
     }
 
     @Override

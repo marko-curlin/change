@@ -69,4 +69,14 @@ public class IncomeResponse {
 //    public void setUsersParticipatedInIncome(List<User> usersParticipatedInIncome) {
 //        this.usersParticipatedInIncome = usersParticipatedInIncome;
 //    }
+
+
+    @Override
+    public String toString() {
+        return "IncomeResponse{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

@@ -68,4 +68,14 @@ public class ExpenseResponse {
 //    public void setUsersParticipatedInExpense(List<User> usersParticipatedInExpense) {
 //        this.usersParticipatedInExpense = usersParticipatedInExpense;
 //    }
+
+
+    @Override
+    public String toString() {
+        return "ExpenseResponse{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

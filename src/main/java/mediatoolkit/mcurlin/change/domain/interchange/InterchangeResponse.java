@@ -19,6 +19,7 @@ public class InterchangeResponse {
     }
 
     public InterchangeResponse(Interchange interchange) {
+        this.id = interchange.getId();
         this.amount = interchange.getAmount();
         this.description = interchange.getDescription();
         this.userGiver = interchange.getUserGiver();
@@ -63,5 +64,16 @@ public class InterchangeResponse {
 
     public void setUserReceiver(User userReceiver) {
         this.userReceiver = userReceiver;
+    }
+
+    @Override
+    public String toString() {
+        return "InterchangeResponse{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", description='" + description + '\'' +
+                ", userGiver=" + userGiver +
+                ", userReceiver=" + userReceiver +
+                '}';
     }
 }

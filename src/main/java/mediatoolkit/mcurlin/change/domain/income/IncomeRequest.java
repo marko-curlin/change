@@ -2,6 +2,7 @@ package mediatoolkit.mcurlin.change.domain.income;
 
 import mediatoolkit.mcurlin.change.domain.user.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class IncomeRequest {
@@ -15,7 +16,7 @@ public class IncomeRequest {
     private List<Long> usersParticipatedInIncomeId;
 
     public IncomeRequest(){
-
+        usersParticipatedInIncomeId = new ArrayList<>();
     }
 
 //    public IncomeRequest(Long id, Double amount, String description, Long userReceivedIncomeId, List<Long> usersParticipatedInIncomeId) {
@@ -54,7 +55,7 @@ public class IncomeRequest {
         return usersParticipatedInIncomeId;
     }
 
-    public void setUsersParticipatedInIncomeId(List<Long> usersParticipatedInIncomeId) {
-        this.usersParticipatedInIncomeId = usersParticipatedInIncomeId;
+    public void addUsersParticipatedInIncomeId(Long usersParticipatedInIncomeId) {
+        this.usersParticipatedInIncomeId.add(usersParticipatedInIncomeId);
     }
 }
